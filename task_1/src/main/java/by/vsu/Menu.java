@@ -47,13 +47,13 @@ public class Menu {
             } else if (chooseAction == Action.ADD_AMMUNITION.ordinal()) {
                 addAmmunition();
             } else if (chooseAction == Action.SORT.ordinal()) {
-                knight.sortByWeight(new WeightComparator());
+                AmmunitionService.sortByWeight(knight.getAmmunitions(), new WeightComparator());
             } else if (chooseAction == Action.PRINT.ordinal()) {
                 System.out.println(knight);
             } else if (chooseAction == Action.SELECT_BETWEEN_PRICE.ordinal()) {
                 selectBetweenPrice();
             } else if (chooseAction == Action.GET_PRICE.ordinal()) {
-                System.out.printf("" + knight.getPriceAmmunition() + "\n");
+                System.out.printf("" + AmmunitionService.getPriceAmmunition(knight.getAmmunitions()) + "\n");
             }
             System.out.println("Введите что-нибудь еще для продолжения");
         }
@@ -92,7 +92,7 @@ public class Menu {
         priceMax = scanner.nextFloat();
         Filter filter = new PriceFilter(priceMin, priceMax);
 
-        List<Ammunition> ammunitions = knight.getElementsByFilter(filter);
+        List<Ammunition> ammunitions = AmmunitionService.getElementsByFilter(knight.getAmmunitions(), filter);
 
         for (Ammunition i : ammunitions) {
             System.out.println(i);
