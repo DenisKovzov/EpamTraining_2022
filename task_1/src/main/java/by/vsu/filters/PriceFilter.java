@@ -26,6 +26,6 @@ public class PriceFilter implements Filter {
 
     @Override
     public boolean check(Ammunition ammunition) {
-        return (ammunition.getPrice() >= priceMin && ammunition.getPrice() <= priceMax);
+        return (ammunition.getPrice().floatValue() >= priceMin && ammunition.getPrice().floatValue() <= priceMax);
     }
 }

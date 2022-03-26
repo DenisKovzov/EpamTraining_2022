@@ -1,6 +1,8 @@
 package by.vsu.models.ammunitions;
 
 
+import java.math.BigDecimal;
+
 public abstract class Ammunition {
     private String name;
     private double weight;
@@ -14,7 +16,7 @@ public abstract class Ammunition {
         return weight;
     }
 
-    abstract public double getPrice();
+    abstract public BigDecimal getPrice();
 
     @Override
     public String toString() {

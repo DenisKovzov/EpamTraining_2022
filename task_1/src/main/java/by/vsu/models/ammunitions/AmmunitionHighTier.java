@@ -1,5 +1,7 @@
 package by.vsu.models.ammunitions;
 
+import java.math.BigDecimal;
+
 public class AmmunitionHighTier extends Ammunition {
 
     public AmmunitionHighTier(String name, double weight) {
@@ -8,7 +10,7 @@ public class AmmunitionHighTier extends Ammunition {
 
 
     @Override
-    public double getPrice() {
-        return 2 * getWeight();
+    public BigDecimal getPrice() {
+        return new BigDecimal(2 * getWeight());
     }
 }

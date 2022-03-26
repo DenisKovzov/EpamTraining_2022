@@ -25,7 +25,7 @@ public class Knight {
         double price = 0;
 
         for (Ammunition i : data) {
-            price += i.getPrice();
+            price += i.getPrice().doubleValue();
         }
 
         return price;
