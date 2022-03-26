@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 public class AmmunitionHighTier extends Ammunition {
 
+    private final int HIGH_TIER_FACTOR = 2;
+
     public AmmunitionHighTier(String name, double weight) {
         super(name, weight);
     }
@@ -11,6 +13,6 @@ public class AmmunitionHighTier extends Ammunition {
 
     @Override
     public BigDecimal getPrice() {
-        return new BigDecimal(2 * getWeight());
+        return new BigDecimal(HIGH_TIER_FACTOR * getWeight());
     }
 }
