@@ -1,7 +1,7 @@
-package models;
+package by.vsu.models;
 
-import models.ammunitions.Ammunition;
-import filters.Filter;
+import by.vsu.models.ammunitions.Ammunition;
+import by.vsu.filters.Filter;
 
 import java.util.ArrayList;
 import java.util.Comparator;

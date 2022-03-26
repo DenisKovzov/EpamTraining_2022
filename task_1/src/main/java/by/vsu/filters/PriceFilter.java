@@ -1,6 +1,6 @@
-package filters;
+package by.vsu.filters;
 
-import models.ammunitions.Ammunition;
+import by.vsu.models.ammunitions.Ammunition;
 
 public class PriceFilter implements Filter{
 

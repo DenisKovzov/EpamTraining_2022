@@ -1,12 +1,14 @@
-import models.ammunitions.Ammunition;
-import models.ammunitions.AmmunitionHighTier;
-import models.ammunitions.AmmunitionLowTier;
-import comparators.WeightComparator;
-import filters.Filter;
-import filters.PriceFilter;
-import models.Action;
-import models.Knight;
-import models.TypeAmmunition;
+package by.vsu;
+
+import by.vsu.models.ammunitions.Ammunition;
+import by.vsu.models.ammunitions.AmmunitionHighTier;
+import by.vsu.models.ammunitions.AmmunitionLowTier;
+import by.vsu.comparators.WeightComparator;
+import by.vsu.filters.Filter;
+import by.vsu.filters.PriceFilter;
+import by.vsu.models.Action;
+import by.vsu.models.Knight;
+import by.vsu.models.TypeAmmunition;
 
 import java.util.List;
 import java.util.Scanner;

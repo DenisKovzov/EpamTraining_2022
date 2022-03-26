@@ -1,6 +1,6 @@
-package comparators;
+package by.vsu.comparators;
 
-import models.ammunitions.Ammunition;
+import by.vsu.models.ammunitions.Ammunition;
 import java.util.Comparator;
 
 public class WeightComparator implements Comparator<Ammunition> {

@@ -1,4 +1,4 @@
-package models.ammunitions;
+package by.vsu.models.ammunitions;
 
 public class AmmunitionLowTier extends Ammunition {
 
