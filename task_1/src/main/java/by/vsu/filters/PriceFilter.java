@@ -8,15 +8,20 @@ public class PriceFilter implements Filter {
     private float priceMax;
 
     public PriceFilter(float priceMin, float priceMax) {
-        setPrice(priceMin, priceMax);
+        validate(priceMin, priceMax);
+        setRange(priceMin, priceMax);
     }
 
-    private void setPrice(float priceMin, float priceMax) {
+    private void setRange(float priceMin, float priceMax) {
+
+        this.priceMin = priceMin;
+        this.priceMax = priceMax;
+    }
+
+    private void validate(float priceMin, float priceMax) {
         if (priceMax < 0 || priceMin < 0 || priceMax < priceMin) {
             throw new IllegalArgumentException("wrong price");
         }
-        this.priceMin = priceMin;
-        this.priceMax = priceMax;
     }
 
     @Override
