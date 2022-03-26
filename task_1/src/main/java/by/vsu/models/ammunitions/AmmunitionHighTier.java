@@ -3,7 +3,7 @@ package by.vsu.models.ammunitions;
 public class AmmunitionHighTier extends Ammunition {
 
     public AmmunitionHighTier(String name, double weight) {
-        super(name,weight);
+        super(name, weight);
     }
 
 

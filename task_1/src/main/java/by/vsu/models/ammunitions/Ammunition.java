@@ -7,7 +7,7 @@ public abstract class Ammunition {
 
     public Ammunition(String name, double weight) {
         this.weight = weight;
-        this.name  = name;
+        this.name = name;
     }
 
     public double getWeight() {

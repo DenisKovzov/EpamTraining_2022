@@ -1,6 +1,7 @@
 package by.vsu;
 
 import by.vsu.models.Knight;
+
 import java.util.Scanner;
 
 

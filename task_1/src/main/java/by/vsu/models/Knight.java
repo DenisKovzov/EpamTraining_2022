@@ -54,7 +54,7 @@ public class Knight {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (Ammunition i: data ) {
+        for (Ammunition i : data) {
             stringBuilder.append(i.toString() + "\n");
         }
 
