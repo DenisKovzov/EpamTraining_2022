@@ -15,3 +15,11 @@ Create a console application that meets the following requirements:
 7. Files can be used to store initialization parameters.
 
 Knight. Determine the hierarchy of the knight's ammunition. Equip the knight. Calculate the cost. Sort ammunition based on weight. Find items of ammunition corresponding to a given range of price parameters.
+
+
+
+Task 2:
+
+Create a text processing program for a programming textbook using classes (if necessary) to represent: a symbol, a word, a sentence, a punctuation mark, etc. In all tasks with text formation, replace tabs and sequences of spaces with one space. The program must process email addresses and phone numbers in the format +XXX(XX)XXX-XX-XX as separate words.
+
+The words of the text starting with vowel letters are sorted alphabetically by the first consonant letter of the word.
