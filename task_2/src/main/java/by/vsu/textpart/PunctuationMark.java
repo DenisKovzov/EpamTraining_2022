@@ -14,7 +14,7 @@ public class PunctuationMark implements Component {
     }
 
     private void validate(String str) {
-        if (isPunctuation(str) == false) {
+        if (!isPunctuation(str)) {
             throw new IllegalArgumentException(str + " is not mark");
         }
     }
