@@ -1,8 +1,8 @@
 package by.vsu;
 
-import by.vsu.partText.Composite;
-import by.vsu.partText.PunctuationMark;
-import by.vsu.partText.Word;
+import by.vsu.textpart.Composite;
+import by.vsu.textpart.PunctuationMark;
+import by.vsu.textpart.Word;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,6 +1,6 @@
-package by.vsu.partText.Comparators;
+package by.vsu.textpart.comparators;
 
-import by.vsu.partText.Word;
+import by.vsu.textpart.Word;
 
 import java.util.Comparator;
 import java.util.regex.Matcher;

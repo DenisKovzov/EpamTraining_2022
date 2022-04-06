@@ -1,4 +1,4 @@
-package by.vsu.partText;
+package by.vsu.textpart;
 
 import java.util.regex.Pattern;
 

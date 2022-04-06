@@ -1,7 +1,7 @@
 package by.vsu;
 
-import by.vsu.partText.Comparators.ComparatorWordByConsonant;
-import by.vsu.partText.Word;
+import by.vsu.textpart.comparators.ComparatorWordByConsonant;
+import by.vsu.textpart.Word;
 
 import java.util.ArrayList;
 import java.util.List;
