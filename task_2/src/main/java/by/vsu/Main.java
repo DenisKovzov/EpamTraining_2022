@@ -33,7 +33,7 @@ public class Main {
         words.sort(new ComparatorWordByConsonant());
 
         for (Word word : words) {
-            System.out.print(word.getString() + " ");
+            System.out.println(word.getString() + " ");
         }
 
 
