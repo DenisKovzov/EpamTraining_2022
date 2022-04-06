@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "Lorem ipsum dolor         sit amet consectetur adipiscing, elit mauris vulputate " +
+        String str = "Lorem ipsum dolor    a     sit amet consectetur adipiscing, elit mauris vulputate " +
                 "       nostra   diam         suspendisse scelerisque pretium " +
                 "                +823(34)437-80-06" +
                 "penatibus et ultricies dennoihoxunna-4478yop@mail.com\n" +

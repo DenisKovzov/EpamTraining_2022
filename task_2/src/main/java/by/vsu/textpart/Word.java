@@ -1,13 +1,12 @@
 package by.vsu.textpart;
 
+import by.vsu.textpart.regexp.WordPart;
+
 import java.util.regex.Pattern;
 
 public class Word implements Component {
 
-    static public final String REG_EXP_WORD =
-            "\\+\\d{3}\\(\\d{2}\\)\\d{3}\\-\\d{2}\\-\\d{2}" + "|" + // телефон
-                    "[a-zA-Z-_0-9.]+@[a-zA-Z-_0-9]+\\.[a-z]{2,3}" + "|" + // почта
-                    "[a-zA-Zа-яА-Я]+[-]?[a-zA-Zа-яА-Я]+"; // слово
+    static public final String REG_EXP_WORD = getWordExp();
 
     private String word;
 
@@ -18,7 +17,7 @@ public class Word implements Component {
     }
 
     private void validate(String str) {
-        if (isWord(str) == false) {
+        if (!isWord(str)) {
             throw new IllegalArgumentException(str + " is not word");
         }
     }
@@ -26,6 +25,18 @@ public class Word implements Component {
     public static boolean isWord(String str) {
         return Pattern.matches(REG_EXP_WORD, str);
     }
+
+    static private final String getWordExp() {
+
+        StringBuilder regExp = new StringBuilder();
+
+        for (WordPart wordPart : WordPart.values()) {
+            regExp.append(wordPart.getWordPart() + "|");
+        }
+
+        return regExp.delete(regExp.length() - 1, regExp.length()).toString();
+    }
+
 
     public String getString() {
         return word;
