@@ -13,28 +13,19 @@ public class ComparatorWordByConsonant implements Comparator<Word> {
 
 
     @Override
-    public int compare(Word o1, Word o2) {
+    public int compare(Word wordFirst, Word wordSecond) {
 
-        if (!Pattern.matches(REG_EXP_VOWEL, o1.getString())
-                && !Pattern.matches(REG_EXP_VOWEL, o2.getString())) {
-            return 0;
-        } else if (!Pattern.matches(REG_EXP_VOWEL, o1.getString())) {
-            return 1;
-        } else if (!Pattern.matches(REG_EXP_VOWEL, o2.getString())) {
-            return -1;
+        if (!Pattern.matches(REG_EXP_VOWEL, wordFirst.getString())
+                || !Pattern.matches(REG_EXP_VOWEL, wordSecond.getString())) {
+            return compareWithoutVowel(wordFirst, wordSecond);
         }
 
+        Matcher matcherForFirst = Pattern.compile(REG_EXP_CONSONANT).matcher(wordFirst.getString());
+        Matcher matcherForSecond = Pattern.compile(REG_EXP_CONSONANT).matcher(wordSecond.getString());
 
-        Matcher matcherForFirst = Pattern.compile(REG_EXP_CONSONANT).matcher(o1.getString());
-        Matcher matcherForSecond = Pattern.compile(REG_EXP_CONSONANT).matcher(o2.getString());
-
-        if (!matcherForFirst.find(0) &&
+        if (!matcherForFirst.find(0) ||
                 !matcherForSecond.find(0)) {
-            return 0;
-        } else if (!matcherForFirst.find(0)) {
-            return 1;
-        } else if (!matcherForSecond.find(0)) {
-            return -1;
+            return compareWithoutConsonant(wordFirst, wordSecond);
         }
 
         String first = matcherForFirst.group();
@@ -42,4 +33,32 @@ public class ComparatorWordByConsonant implements Comparator<Word> {
 
         return first.compareTo(second);
     }
+
+    private int compareWithoutVowel(Word wordFirst, Word wordSecond) {
+
+        if (!Pattern.matches(REG_EXP_VOWEL, wordFirst.getString())
+                && !Pattern.matches(REG_EXP_VOWEL, wordSecond.getString())) {
+            return 0;
+        } else if (!Pattern.matches(REG_EXP_VOWEL, wordFirst.getString())) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+    private int compareWithoutConsonant(Word wordFirst, Word wordSecond) {
+
+        Matcher matcherForFirst = Pattern.compile(REG_EXP_CONSONANT).matcher(wordFirst.getString());
+        Matcher matcherForSecond = Pattern.compile(REG_EXP_CONSONANT).matcher(wordSecond.getString());
+
+        if (!matcherForFirst.find(0) &&
+                !matcherForSecond.find(0)) {
+            return 0;
+        } else if (!matcherForFirst.find(0)) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
 }
