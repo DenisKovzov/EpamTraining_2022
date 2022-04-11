@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weapons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.vsu.by/weapons" xsi:schemaLocation="http://www.vsu.by/weapons weapons.xsd">
+    <weapon id="1">
+        <Type>KNIFE</Type>
+        <Handy>ONE_HANDED</Handy>
+        <Origin>First</Origin>
+        <Visual>
+            <bladeLength>32</bladeLength>
+            <bladeWidth>22</bladeWidth>
+            <bladeMaterial>STEEL</bladeMaterial>
+            <handleMaterial>METAL</handleMaterial>
+            <bloodstream>false</bloodstream>
+        </Visual>
+        <Value>true</Value>
+    </weapon>
+
+    <weapon id="2">
+        <Type>DAGGER</Type>
+        <Handy>TWO_HANDED</Handy>
+        <Origin>Second</Origin>
+        <Visual>
+            <bladeLength>22</bladeLength>
+            <bladeWidth>12</bladeWidth>
+            <bladeMaterial>CAST IRON</bladeMaterial>
+            <handleMaterial>PLASTIC</handleMaterial>
+            <bloodstream>true</bloodstream>
+        </Visual>
+        <Value>false</Value>
+    </weapon>
+
+</weapons>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vsu.by/weapons"
+        xmlns:tns="http://www.vsu.by/weapons" elementFormDefault="qualified">
+
+    <element name="weapons">
+        <complexType>
+            <sequence>
+                <element name="weapon" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="Type" type="tns:weaponType"/>
+                            <element name="Handy" type="tns:handyType"/>
+                            <element name="Origin" type="string"/>
+                            <element name="Visual" type="tns:visualType"/>
+                            <element name="Value" type="boolean"/>
+                        </sequence>
+                        <attribute name="id" type="int" use="required"/>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <simpleType name="handyType">
+        <restriction base="string">
+            <enumeration value="ONE_HANDED"/>
+            <enumeration value="TWO_HANDED"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="weaponType">
+        <restriction base="string">
+            <enumeration value="KNIFE"/>
+            <enumeration value="DAGGER"/>
+            <enumeration value="SABER"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="visualType">
+        <all>
+            <element name="bladeLength" type="tns:myFloat"/>
+            <element name="bladeWidth" type="tns:myFloat"/>
+            <element name="bladeMaterial" type="tns:bladeMaterial"/>
+            <element name="handleMaterial" type="tns:handleMaterial"/>
+            <element name="bloodstream" type="boolean"/>
+
+        </all>
+    </complexType>
+
+    <simpleType name="myFloat">
+        <restriction base="float">
+            <minInclusive value="10"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="bladeMaterial">
+        <restriction base="string">
+            <enumeration value="STEEL"/>
+            <enumeration value="CAST IRON"/>
+            <enumeration value="copper"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="handleMaterial">
+        <restriction base="string">
+            <enumeration value="WOOD"/>
+            <enumeration value="PLASTIC"/>
+            <enumeration value="METAL"/>
+        </restriction>
+    </simpleType>
+
+</schema>
