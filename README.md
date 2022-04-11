@@ -23,3 +23,20 @@ Task 2:
 Create a text processing program for a programming textbook using classes (if necessary) to represent: a symbol, a word, a sentence, a punctuation mark, etc. In all tasks with text formation, replace tabs and sequences of spaces with one space. The program must process email addresses and phone numbers in the format +XXX(XX)XXX-XX-XX as separate words.
 
 The words of the text starting with vowel letters are sorted alphabetically by the first consonant letter of the word.
+
+
+
+Task 3:
+
+1. Develop an XML document structure for your variant, describe it using XSD. Create an XML file corresponding to the developed XSD schema.
+2. When developing XSD, use simple and complex types, enumerations, templates and limit values, it is mandatory to use attributes and type ID.
+3. Create a Java class(classes) corresponding to the developed scheme.
+4. Create a Java application for parsing an XML document and initializing a collection of objects with information from an XML file. To parse, use SAX, DOM or Sax parser. To sort objects, use the Comparator interface.
+5. To check the correctness and validity of an XML document using XSD.
+
+Edged weapons can be structured according to the following scheme:
+1. Type – type (knife, dagger, saber, etc.).
+2. Handy – one or two-handed.
+3. Origin – country of manufacture.
+4. Visual (there should be several) – visual characteristics: blade (blade length [10 – n cm], blade width [10 – n mm]), material (blade [steel, cast iron, copper, etc.]), handle (wood, plastic, metal), presence of a blood drain (there is or not).
+5. Value – collectible or not.
