@@ -1,9 +1,7 @@
 package vsu.by.xml;
 
+import vsu.by.controller.weapon.set.*;
 import vsu.by.models.*;
-import vsu.by.models.visualWeapon.*;
-import vsu.by.models.visualWeapon.BladeMaterial;
-import vsu.by.models.visualWeapon.HandleMaterial;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -12,11 +10,19 @@ import javax.xml.stream.XMLStreamReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class WeaponXmlReader {
+
+    private String WEAPON_NAME = "weapon";
+
     public List<Weapon> read(String fileName) throws FileNotFoundException {
         XMLStreamReader reader = null;
+        Map<String, FieldSetter> mapAction = new HashMap<>();
+
+        initializeMapAction(mapAction);
 
         try {
             List<Weapon> weapons = new ArrayList<>();
@@ -34,27 +40,14 @@ public class WeaponXmlReader {
                     case XMLStreamConstants.START_ELEMENT: {
                         String tagName = reader.getLocalName();
 
-                        if ("weapon".equals(tagName)) {
+                        if (WEAPON_NAME.equals(tagName)) {
                             weapon = new Weapon();
                             weapon.setId(reader.getAttributeValue(null, "id"));
-                        } else if ("Type".equals(tagName)) {
-                            weapon.setWeaponType(WeaponType.valueOf(reader.getElementText()));
-                        } else if ("Handy".equals(tagName)) {
-                            weapon.setHandleType(HandleType.valueOf(reader.getElementText()));
-                        } else if ("Origin".equals(tagName)) {
-                            weapon.setOrigin(reader.getElementText());
-                        } else if ("bladeLength".equals(tagName)) {
-                            weapon.addVisual(new BladeLength(reader.getElementText()));
-                        } else if ("bladeWidth".equals(tagName)) {
-                            weapon.addVisual(new BladeWidth(reader.getElementText()));
-                        } else if ("bladeMaterial".equals(tagName)) {
-                            weapon.addVisual(new BladeMaterial(reader.getElementText()));
-                        } else if ("handleMaterial".equals(tagName)) {
-                            weapon.addVisual(new HandleMaterial(reader.getElementText()));
-                        } else if ("bloodstream".equals(tagName)) {
-                            weapon.addVisual(new Bloodstream(reader.getElementText()));
-                        } else if ("Value".equals(tagName)) {
-                            weapon.setValue(Boolean.valueOf(reader.getElementText()));
+                        } else {
+                            FieldSetter field = mapAction.get(tagName);
+                            if (field != null) {
+                                field.set(weapon, reader.getElementText());
+                            }
                         }
                         break;
                     }
@@ -76,6 +69,19 @@ public class WeaponXmlReader {
             } catch (Exception e) {
             }
         }
+
+    }
+
+    private void initializeMapAction(Map<String, FieldSetter> map) {
+        map.put("Type", new SetWeaponType());
+        map.put("Handy", new SetHandleType());
+        map.put("Origin", new SetOrigin());
+        map.put("bladeLength", new SetBladeLength());
+        map.put("bladeWidth", new SetBladeWidth());
+        map.put("bladeMaterial", new SetBladeMaterial());
+        map.put("handleMaterial", new SetHandleMaterial());
+        map.put("bloodstream", new SetBloodStream());
+        map.put("Value", new SetValue());
 
     }
 }
