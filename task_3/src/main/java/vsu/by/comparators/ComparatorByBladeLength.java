@@ -12,7 +12,7 @@ public class ComparatorByBladeLength implements Comparator<Weapon> {
     }
 
     private int getValueBladeLength(Weapon weapon) {
-        return Integer.valueOf(weapon.getVisual().stream().
+        return Integer.parseInt(weapon.getVisual().stream().
                 filter(e -> e.getClass() == BladeLength.class).findFirst().get().getValue());
     }
 }
