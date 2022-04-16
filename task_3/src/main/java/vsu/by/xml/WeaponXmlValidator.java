@@ -12,7 +12,7 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-public class WeaponXmlValidate extends DefaultHandler {
+public class WeaponXmlValidator extends DefaultHandler {
     private static final String SCHEMA_FILE_NAME = "weapons.xsd";
 
     private StringBuilder error = new StringBuilder();
@@ -25,26 +25,25 @@ public class WeaponXmlValidate extends DefaultHandler {
     }
 
     @Override
-    public void warning(SAXParseException e) throws SAXException {
-        error.append("WARNING: " + getErrorInfo(e));
+    public void warning(SAXParseException e) {
+        error.append("WARNING: ");
+        error.append(getErrorInfo(e));
     }
 
     @Override
-    public void error(SAXParseException e) throws SAXException {
-        error.append("ERROR: " + getErrorInfo(e));
+    public void error(SAXParseException e) {
+        error.append("ERROR: ");
+        error.append(getErrorInfo(e));
     }
 
     @Override
-    public void fatalError(SAXParseException e) throws SAXException {
-        error.append("FATAL_ERROR: " + getErrorInfo(e));
+    public void fatalError(SAXParseException e) {
+        error.append("FATAL_ERROR: ");
+        error.append(getErrorInfo(e));
     }
 
     public String getError() {
-        if (error.length() > 0) {
-            return error.toString();
-        } else {
-            return null;
-        }
+        return !error.toString().isEmpty() ? error.toString() : null;
     }
 
     public boolean validate(String xmlFileName) throws IOException {

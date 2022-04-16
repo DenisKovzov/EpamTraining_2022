@@ -3,7 +3,7 @@ package vsu.by;
 import vsu.by.comparators.ComparatorByBladeLength;
 import vsu.by.models.Weapon;
 import vsu.by.xml.WeaponXmlReader;
-import vsu.by.xml.WeaponXmlValidate;
+import vsu.by.xml.WeaponXmlValidator;
 import vsu.by.xml.WeaponXmlWriter;
 
 import javax.xml.stream.XMLStreamException;
@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws IOException, XMLStreamException {
         File file = new File("weapons.xml");
 
-        WeaponXmlValidate validator = new WeaponXmlValidate();
+        WeaponXmlValidator validator = new WeaponXmlValidator();
 
         if (validator.validate(file.getPath())) {
 
