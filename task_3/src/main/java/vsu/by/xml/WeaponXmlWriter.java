@@ -19,42 +19,35 @@ public class WeaponXmlWriter {
             writer = factory.createXMLStreamWriter(new FileOutputStream(fileName), "UTF-8");
 
             writer.writeStartDocument("UTF-8", "1.0");
+            writer.writeCharacters("\n");
             writer.writeStartElement("weapons");
             writer.writeAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             writer.writeAttribute("xmlns", "http://www.vsu.by/weapons");
             writer.writeAttribute("xsi:schemaLocation", "http://www.vsu.by/weapons weapons.xsd");
-
+            writer.writeCharacters("\n");
             for (Weapon weapon : weapons) {
                 writer.writeStartElement("weapon");
                 writer.writeAttribute("id", weapon.getId());
+                writer.writeCharacters("\n");
 
-                writer.writeStartElement("Type");
-                writer.writeCharacters(weapon.getWeaponType().toString());
-                writer.writeEndElement();
-
-                writer.writeStartElement("Handy");
-                writer.writeCharacters(weapon.getHandleType().toString());
-                writer.writeEndElement();
-
-                writer.writeStartElement("Origin");
-                writer.writeCharacters(weapon.getOrigin());
-                writer.writeEndElement();
+                writeSimpleElement(writer, "Type", weapon.getWeaponType().toString());
+                writeSimpleElement(writer, "Handy", weapon.getHandleType().toString());
+                writeSimpleElement(writer, "Origin", weapon.getOrigin());
 
                 writer.writeStartElement("Visual");
                 for (VisualTypeWeapon visualTypeWeapon : weapon.getVisual()) {
-                    writer.writeStartElement(visualTypeWeapon.getName());
-                    writer.writeCharacters(visualTypeWeapon.getValue());
-                    writer.writeEndElement();
+                    writeSimpleElement(writer, visualTypeWeapon.getName(), visualTypeWeapon.getValue());
                 }
                 writer.writeEndElement();
+                writer.writeCharacters("\n");
 
-                writer.writeStartElement("Value");
-                writer.writeCharacters(Boolean.toString(weapon.getValue()));
-                writer.writeEndElement();
+                writeSimpleElement(writer, "Value", Boolean.toString(weapon.getValue()));
 
                 writer.writeEndElement();
+                writer.writeCharacters("\n");
             }
             writer.writeEndElement();
+            writer.writeCharacters("\n");
             writer.writeEndDocument();
         } finally {
             try {
@@ -64,4 +57,12 @@ public class WeaponXmlWriter {
             }
         }
     }
+
+    private void writeSimpleElement(XMLStreamWriter writer, String nameElement, String nameCharacteristics) throws XMLStreamException {
+        writer.writeStartElement(nameElement);
+        writer.writeCharacters(nameCharacteristics);
+        writer.writeEndElement();
+        writer.writeCharacters("\n");
+    }
+
 }
