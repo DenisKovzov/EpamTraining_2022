@@ -1,0 +1,41 @@
+DROP DATABASE IF EXISTS `air_campaign`;
+CREATE DATABASE `air_campaign` DEFAULT CHARACTER SET utf8;
+
+USE `air_campaign`;
+
+CREATE TABLE `brigades`
+(
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(200) NOT NULL UNIQUE
+) ENGINE=INNODB DEFAULT CHARACTER SET utf8;
+
+CREATE TABLE `flights`
+(
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
+    `number_tickets` INT NOT NULL,
+    `date_time_departure` TIMESTAMP NOT NULL,
+    `date_time_arrival` TIMESTAMP NOT NULL,
+    `departure_point` VARCHAR(200) NOT NULL,
+    `destination` VARCHAR(200)	NOT NULL,
+    `status` INT NOT NULL,
+    `id_brigade` BIGINT NOT NULL,
+    FOREIGN KEY (`id_brigade`)  REFERENCES `brigades` (`id`) ON UPDATE RESTRICT ON DELETE RESTRICT
+) ENGINE=INNODB DEFAULT CHARACTER SET utf8;
+
+CREATE TABLE `users`
+(
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
+    `login` VARCHAR(200) NOT NULL UNIQUE,
+    `password` VARCHAR(200)	NOT NULL,
+    `role` INT NOT NULL
+) ENGINE=INNODB DEFAULT CHARACTER SET utf8;
+
+CREATE TABLE `employees`
+(
+    `id` BIGINT NOT NULL,
+    `position` BIGINT NOT NULL,
+    `id_brigade` BIGINT,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`id`)  REFERENCES `users` (`id`) ON UPDATE RESTRICT ON DELETE CASCADE,
+    FOREIGN KEY (`id_brigade`)  REFERENCES `brigades` (`id`) ON UPDATE RESTRICT ON DELETE SET NULL
+) ENGINE=INNODB DEFAULT CHARACTER SET utf8;

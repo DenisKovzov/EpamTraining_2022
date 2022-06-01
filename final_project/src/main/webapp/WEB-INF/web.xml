@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+  <servlet>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>vsu.by.controller.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/index.html</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>UserListServlet</servlet-name>
+    <servlet-class>vsu.by.controller.user.UserListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserListServlet</servlet-name>
+    <url-pattern>/user/list.html</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>UserEditServlet</servlet-name>
+    <servlet-class>vsu.by.controller.user.UserEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserEditServlet</servlet-name>
+    <url-pattern>/user/edit.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UserSaveServlet</servlet-name>
+    <servlet-class>vsu.by.controller.user.UserSaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserSaveServlet</servlet-name>
+    <url-pattern>/user/save.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UserDeleteServlet</servlet-name>
+    <servlet-class>vsu.by.controller.user.UserDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDeleteServlet</servlet-name>
+    <url-pattern>/user/delete.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>vsu.by.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeeListServlet</servlet-name>
+    <servlet-class>vsu.by.controller.employee.EmployeeListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeListServlet</servlet-name>
+    <url-pattern>/employee/list.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeeEditServlet</servlet-name>
+    <servlet-class>vsu.by.controller.employee.EmployeeEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeEditServlet</servlet-name>
+    <url-pattern>/employee/edit.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeeSaveServlet</servlet-name>
+    <servlet-class>vsu.by.controller.employee.EmployeeSaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeSaveServlet</servlet-name>
+    <url-pattern>/employee/save.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeeDeleteServlet</servlet-name>
+    <servlet-class>vsu.by.controller.employee.EmployeeDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeDeleteServlet</servlet-name>
+    <url-pattern>/employee/delete.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrigadeListServlet</servlet-name>
+    <servlet-class>vsu.by.controller.brigade.BrigadeListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrigadeListServlet</servlet-name>
+    <url-pattern>/brigade/list.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrigadeEditServlet</servlet-name>
+    <servlet-class>vsu.by.controller.brigade.BrigadeEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrigadeEditServlet</servlet-name>
+    <url-pattern>/brigade/edit.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrigadeDeleteServlet</servlet-name>
+    <servlet-class>vsu.by.controller.brigade.BrigadeDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrigadeDeleteServlet</servlet-name>
+    <url-pattern>/brigade/delete.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrigadeSaveServlet</servlet-name>
+    <servlet-class>vsu.by.controller.brigade.BrigadeSaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrigadeSaveServlet</servlet-name>
+    <url-pattern>/brigade/save.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FlightListServlet</servlet-name>
+    <servlet-class>vsu.by.controller.flight.FlightListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlightListServlet</servlet-name>
+    <url-pattern>/flight/list.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FlightEditServlet</servlet-name>
+    <servlet-class>vsu.by.controller.flight.FlightEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlightEditServlet</servlet-name>
+    <url-pattern>/flight/edit.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FlightSaveServlet</servlet-name>
+    <servlet-class>vsu.by.controller.flight.FlightSaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlightSaveServlet</servlet-name>
+    <url-pattern>/flight/save.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FlightDeleteServlet</servlet-name>
+    <servlet-class>vsu.by.controller.flight.FlightDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlightDeleteServlet</servlet-name>
+    <url-pattern>/flight/delete.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>vsu.by.controller.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout.html</url-pattern>
+  </servlet-mapping>
+
+
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>vsu.by.controller.filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>*.html</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>SecurityFilter</filter-name>
+    <filter-class>vsu.by.controller.filter.SecurityFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SecurityFilter</filter-name>
+    <url-pattern>*.html</url-pattern>
+  </filter-mapping>
+
+
+  <listener>
+    <listener-class>vsu.by.controller.listener.ApplicationInitializerListener</listener-class>
+  </listener>
+
+  <context-param>
+    <param-name>jdbc-driverName</param-name>
+    <param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>jdbc-url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/air_campaign</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>jdbc-user</param-name>
+    <param-value>root</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>jdbc-password</param-name>
+    <param-value>asjbd8qSU&amp;Y@I</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>jdbc-minSize</param-name>
+    <param-value>10</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>jdbc-maxSize</param-name>
+    <param-value>20</param-value>
+  </context-param>
+
+  <context-param>
+   <param-name>jdbc-validationConnectionTimeout</param-name>
+    <param-value>1</param-value>
+  </context-param>
+
+</web-app>
